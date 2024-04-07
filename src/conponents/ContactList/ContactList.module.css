@@ -1,0 +1,17 @@
+.contList {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid darkgray;
+    border-radius: 8px;
+    width: 400px;
+    padding: 10px;
+    
+}

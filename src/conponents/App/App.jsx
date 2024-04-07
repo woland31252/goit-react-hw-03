@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import contacts from '../contacts.json'
-import './App.css'
+import css from '../App/App.module.css'
 // import Contact from '../Contact/Contact'
 import ContactList from '../ContactList/ContactList'
 function App() {
@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Phonebook</h1>
+      <h1 className={css.phoneTitle}>Phonebook</h1>
       <ContactList contacts={contacts} />
     </>
   )

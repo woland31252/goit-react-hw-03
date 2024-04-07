@@ -1,9 +1,17 @@
-export default function Contact({ cont}) {
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { BsFillPersonFill } from "react-icons/bs";
+import css from '../Contact/Contact.module.css'
+export default function Contact({ contItem: {
+    name,
+    number
+}}) {
     return (
         <>
-            <p>{cont.name}</p>
-            <p>{cont.number}</p>
-            <button type="button">Delete</button>
+            <div className={css.contact}>
+                <p className={css.contactName}><BsFillPersonFill className={css.icon} />{name}</p>
+                <a href="tel:{ number }" className={css.contactPhone}><BsFillTelephoneFill className={css.icon} />{number}</a>
+            </div>
+            <button type="button" className={css.btn}>Delete</button>
         </>
     )
 }
