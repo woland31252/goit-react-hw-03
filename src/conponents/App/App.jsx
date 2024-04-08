@@ -1,16 +1,23 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import contacts from '../contacts.json'
 import css from '../App/App.module.css'
 // import Contact from '../Contact/Contact'
 import ContactList from '../ContactList/ContactList'
+import SearchBox from '../SearchBox/SearchBox'
 function App() {
-  // const [count, setCount] = useState(0)
+  const [findContact, setFindContact] = useState(contacts)
+
+  const handleFindContact = (evt) => {
+    const findElem = setFindContact(evt.target.value);
+    findContact.filter(elem => elem.findElem)
+  }
 
   return (
-    <>
+    <div className={css.container}>
       <h1 className={css.phoneTitle}>Phonebook</h1>
-      <ContactList contacts={contacts} />
-    </>
+      <SearchBox onFind={ handleFindContact} />
+      <ContactList contacts={findContact} />
+    </div>
   )
 }
 
