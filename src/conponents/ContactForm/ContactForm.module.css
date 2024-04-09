@@ -41,3 +41,9 @@
     margin: 0 auto;
 
 }
+
+.formBtn:hover {
+    background-color: gray;
+    transition: 400ms;
+    color: beige;
+}
