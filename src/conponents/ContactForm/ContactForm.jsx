@@ -31,8 +31,8 @@ import css from '../ContactForm/ContactForm.module.css';
 
 export default function ContactForm({ onAdd }) {
 const ContactSchema = Yup.object().shape({
-  name: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-//   number: Yup.number().("Must be a valid email!").required("Required"),
+  name: Yup.string().min(2, "Too Short!").max(20, "Too Long!").required("Required"),
+//   number: Yup.number().cast(111-11-11)("Must be a valid email!").required("Required"),
 });
 
     const nameId = useId();

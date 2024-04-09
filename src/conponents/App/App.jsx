@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useEffect } from 'react'
 import contacts from '../contacts.json'
 import css from '../App/App.module.css'
 import ContactForm from '../ContactForm/ContactForm'
@@ -7,7 +8,9 @@ import SearchBox from '../SearchBox/SearchBox'
 function App() {
   const [contact, setContact] = useState(contacts);
   const [filter, setFilter] = useState("")
-
+  
+  
+  
   const addContact = (newContact) => {
     setContact((curentData) => {
       return [...curentData, newContact];
@@ -21,6 +24,9 @@ function App() {
 }
 
   const filterContact = contact.filter((cont) => cont.name.toLowerCase().includes(filter.toLowerCase()));
+  useEffect(() => {
+    window.localStorage.setItem("saved-phones", JSON.stringify(contact) );
+  });
 
   return (
     <div className={css.container}>
