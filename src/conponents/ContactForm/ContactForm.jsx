@@ -1,6 +1,7 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage} from 'formik';
 import { useId } from "react";
 import * as Yup from "yup";
+
 
 import css from '../ContactForm/ContactForm.module.css';
 
@@ -58,9 +59,11 @@ const ContactSchema = Yup.object().shape({
           
           <Form className={ css.form}>
                 <label className={css.formLable} htmlFor={nameId}>Name</label>
-                <Field className={css.formInput} type="text" name="name" id={ nameId} />
+              <Field className={css.formInput} type="text" name="name" id={nameId} />
+              <ErrorMessage name="name" component="span" />
                 <label className={css.formLable} htmlFor={numberId}>Number</label>
-                <Field className={css.formInput} type="text" name="number" id={ numberId} />
+              <Field className={css.formInput} type="text" name="number" id={numberId} />
+              <ErrorMessage name="number" component="span" />
 				<button className={css.formBtn} type="submit">Add Contact</button>
 			</Form>
         </Formik>
