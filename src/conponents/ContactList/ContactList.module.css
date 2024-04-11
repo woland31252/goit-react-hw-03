@@ -1,7 +1,6 @@
 .contList {
-
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -11,7 +10,7 @@
     align-items: center;
     border: 2px solid darkgray;
     border-radius: 8px;
-    width: 400px;
     padding: 10px;
+    width: calc((100% - 20px)/3);
     
 }
