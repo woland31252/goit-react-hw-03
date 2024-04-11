@@ -9,28 +9,21 @@ function App() {
   const [contact, setContact] = useState(() => {
     const savedCont = window.localStorage.getItem("saved-phones");
 
-    if (!contacts) {
+    if (savedCont) {
       return JSON.parse(savedCont);
     }
     return contacts
   });
   
-  
-
   const [filter, setFilter] = useState("")
   
   const addContact = (newContact) => {
     setContact((curentData) => {
-      const numberPhone = [...curentData, newContact];
-      return numberPhone;
+      return [...curentData, newContact];
+      
     });
   };
   
-  useEffect(() => {
-    localStorage.setItem("saved-phones", JSON.stringify(contact))
-  }, [contact]);
-  
-
   const deleteContact = (contId) => {
     setContact((curentData) => {
       return curentData.filter((elem) => elem.id !== contId)
@@ -38,6 +31,10 @@ function App() {
   };
 
   const filterContact = contact.filter((cont) => cont.name.toLowerCase().includes(filter.toLowerCase()));
+  
+  useEffect(() => {
+    window.localStorage.setItem("saved-phones", JSON.stringify(contact))
+  }, [contact]);
   
   return (
     <div className={css.container}>
