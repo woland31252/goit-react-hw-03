@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid'
+import { nanoid } from 'nanoid';
 import { useId } from "react";
 import clsx from 'clsx';
 import * as Yup from "yup";
@@ -16,7 +16,7 @@ const ContactSchema = Yup.object().shape({
 
   const nameId = useId();
   const numberId = useId();
-  
+   
 
   const initValue = {
             id: nanoid(),
