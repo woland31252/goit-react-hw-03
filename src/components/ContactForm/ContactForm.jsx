@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import * as Yup from "yup";
 
 
-import css from '../ContactForm/ContactForm.module.css';
+import css from './ContactForm.module.css';
 
 
 export default function ContactForm({ onAdd }) {

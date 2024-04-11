@@ -1,6 +1,6 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
-import css from '../Contact/Contact.module.css'
+import css from './Contact.module.css'
 export default function Contact({ contItem: {
         id,
         name,

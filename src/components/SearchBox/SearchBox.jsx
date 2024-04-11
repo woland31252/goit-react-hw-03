@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import css from '../SearchBox/SearchBox.module.css'
+import css from './SearchBox.module.css'
 export default function SearchBox({value, onFilter}) {
     const findId = useId()
     return (
