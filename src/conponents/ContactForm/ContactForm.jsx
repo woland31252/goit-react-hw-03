@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { nanoid } from 'nanoid'
 import { useId } from "react";
+import clsx from 'clsx';
 import * as Yup from "yup";
 
 
@@ -38,10 +39,10 @@ const ContactSchema = Yup.object().shape({
           <Form className={ css.form}>
                 <label className={css.formLable} htmlFor={nameId}>Name</label>
               <Field className={css.formInput} type="text" name="name" id={nameId} />
-              <ErrorMessage name="name" component="span" />
+              <ErrorMessage className={clsx(css.formValid, css.formName)} name="name" component="span" />
                 <label className={css.formLable} htmlFor={numberId}>Number</label>
               <Field className={css.formInput} type="text" name="number" id={numberId} />
-              <ErrorMessage name="number" component="span" />
+        <ErrorMessage className={clsx(css.formValid, css.formNum)} name="number" component="span" />
 				<button className={css.formBtn} type="submit">Add Contact</button>
 			</Form>
         </Formik>

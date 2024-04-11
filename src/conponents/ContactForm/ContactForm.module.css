@@ -1,6 +1,7 @@
 .form {
     display: flex;
     flex-direction: column;
+    position:relative;
     width: 400px;
     border: 2px solid darkgray;
     border-radius: 8px;
@@ -46,4 +47,17 @@
     background-color: gray;
     transition: 400ms;
     color: beige;
+}
+
+.formValid {
+    color:crimson;
+    position: absolute;
+}
+
+.formNum {
+    bottom: 60px;
+}
+
+.formName {
+    bottom: 145px;
 }
